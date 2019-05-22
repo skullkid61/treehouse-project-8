@@ -45,12 +45,6 @@ fetch(url)
       createModal(employee);
     })
   })
-  .then(wrapper.addEventListener('click', (e) => {
-    const cardList = document.getElementsByClassName('card');
-    if (e.target === cardList) {
-      console.log('this is working');
-    }
-  }))
   .catch(function(error) {
   console.log(error);
 });
@@ -58,7 +52,14 @@ fetch(url)
 // Modal functionality
 
 wrapper.addEventListener('click', (e) => {
-    if (e.target === cardList) {
-      console.log("this works so far")
+  let card = document.querySelectorAll('.card');
+  let modal = document.querySelectorAll('.modal');
+  let close = document.querySelectorAll('.close');
+  for (i=0; i < card.length; i++) {
+    if (e.target === card[i]) {
+      modal[i].style.display = 'block';
+    } else if (e.target === modal[i] || e.target === close[i]) {
+      modal[i].style.display = 'none';
     }
+  }
 });
