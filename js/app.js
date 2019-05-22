@@ -1,6 +1,7 @@
 const employeeList = document.getElementById('employees');
 const wrapper = document.getElementsByClassName('wrapper')[0];
 
+
 function createCard(data) {
   let card = document.createElement('div');
   card.classList.add('card');
@@ -24,12 +25,12 @@ function createModal(data) {
     <div class="modal-text">
       <h2>${data.name.first} ${data.name.last}</h2>
       <p>${data.email}</p>
-      <p>${data.location.city}</p>
+      <p class="city">${data.location.city}</p>
     </div>
     <div class="modal-contact">
       <p>${data.cell}</p>
       <p>${data.location.street}</p>
-      <p>Birthday: ${data.dob.date}</p>
+      <p>Birthday: ${data.dob.date.replace(/T.*/,'').split('-').reverse().join('/')}</p>
     </div>
   </div>`
   wrapper.appendChild(newModal);
