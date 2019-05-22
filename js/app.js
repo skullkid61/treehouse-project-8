@@ -29,14 +29,14 @@ function createModal(data) {
     </div>
     <div class="modal-contact">
       <p>${data.cell}</p>
-      <p>${data.location.street}</p>
+      <p class="city">${data.location.street}, ${data.location.state} ${data.location.postcode}</p>
       <p>Birthday: ${data.dob.date.replace(/T.*/,'').split('-').reverse().join('/')}</p>
     </div>
   </div>`
   wrapper.appendChild(newModal);
 }
 
-const url = 'https://randomuser.me/api/?results=12&nat=gb,au,ca,us';
+const url = 'https://randomuser.me/api/?results=12&nat=au';
 fetch(url)
   .then((resp) => resp.json())
   .then(function(data) {
