@@ -9,6 +9,12 @@ body {
   max-width: 1400px;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
 h1 {
   text-transform: uppercase;
   font-size: 16px;
@@ -17,7 +23,14 @@ h1 {
   color: #4a4a4a;
   letter-spacing: 1px;
   text-align: center;
-  margin: 2em 0;
+}
+
+#mySearch {
+  margin: .4em 1em;
+  padding: .4em;
+  border: solid 1px #dfdfdf;
+  border-radius: 6px;
+  max-width: 400px;
 }
 
 #employees {
@@ -44,7 +57,6 @@ h1 {
 
 .card img {
   width: 27%;
-  height: 27%;
   border-radius: 50%;
   margin-right: 8%;
 }
@@ -114,6 +126,14 @@ h2 {
   border-radius: 50%;
 }
 
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  color: #aaaaaa;
+  height: 0;
+  z-index: 100;
+}
+
 .modal-text {
   padding-bottom: 1em;
 }
@@ -138,7 +158,11 @@ h2 {
 }
 
 .close:hover,
-.close:focus {
+.close:focus,
+.prev:focus,
+.prev:hover,
+.next:focus,
+.next:hover {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -146,7 +170,6 @@ h2 {
 
 @media screen and (min-width: 360px) {
   .card img {
-    height: 30%;
     width: 30%;
   }
   .card-text {
@@ -168,6 +191,9 @@ h2 {
     text-align: left;
     font-size: 1.1em;
   }
+  #mySearch {
+    margin: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -177,6 +203,17 @@ h2 {
   }
   h1 {
     letter-spacing: 2px;
+    margin: .4em;
+  }
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: .4em;
+  }
+  #mySearch {
+    width: 35%;
+    padding: .4em 1em;
   }
 }
 
